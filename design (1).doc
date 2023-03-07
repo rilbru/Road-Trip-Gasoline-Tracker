@@ -1,0 +1,108 @@
+SAMPLE RUN:
+Welcome to the Road Trip Gasoline Tracker!
+
+How many gas stations did you fill up at? 5
+
+Enter fill up cost (one at a time): $: $50.67
+
+Enter fill up cost (one at a time): $: $48.52
+
+Enter fill up cost (one at a time): $: $55.88
+
+Enter fill up cost (one at a time): $: $60.01
+
+Enter fill up cost (one at a time): $: $52.90
+
+Your total spent on gasoline during your road trip was: $267.98
+
+The average spent on gasoline during your road trip was: $53.60
+
+The minimum spent on gasoline during your road trip was: $48.52
+
+The maximum spent on gasoline during your road trip was: $60.01
+
+Would you like to enter more? (y/n)
+
+I hope you had a great road trip! Thank you for using my program!
+
+
+===========================================================
+DESIGN:
+
+a) Inputs
+
+int gasStations
+double gasFill
+char userResponse
+
+
+-----------------------------------------------------------
+b) Outputs
+
+int counter
+double sumSpent
+double avgSpent
+double minSpent
+double maxSpent
+
+-----------------------------------------------------------
+c) Calculations
+
+sumSpent = sumSpent + gasFill
+avgSpent = (sumSpent / gasStations)
+
+-----------------------------------------------------------
+d) Pseudocode
+
+DECLARE int gasStations
+DECLARE int counter = 1
+DECLARE double gasFill
+DECLARE double sumSpent
+DECLARE double avgSpent
+DECLARE double minSpent
+DECLARE double maxSpent
+DECLARE char userResponse = 'y'
+DISPLAY "Welcome to the Road Trip Gasoline Tracker!"
+WHILE (userResponse = 'y')
+  DISPLAY "How many gas stations did you fill up at?"
+  INPUT gasStations
+  DISPLAY "Enter fill up cost (one at a time): $"
+  INPUT tankFill
+  SET sumSpent = sumSpent + tankFill;
+  SET maxSpent = gasFill;
+  SET minSpent = gasFill;
+  SET counter++
+  WHILE (counter <= gasStations)
+    DISPLAY "Enter fill up cost (one at a time): $"
+    INPUT gasFill
+    sumSpent = sumSpent + gasFill
+    counter++
+    IF (gasFill > maxSpent) THEN
+      maxSpent = gasFill
+    END IF
+    IF (gasFill < minSpent)
+      minSpent = gasFill
+    END IF
+  END WHILE
+
+  DISPLAY "Would you like to enter more? (y/n)"
+  INPUT userResponse
+
+  avgSpent = (sumSpent / gasStations)
+
+  DISPLAY "Your total spent on gasoline   during your road trip was: "
+  OUTPUT sumSpent
+  DISPLAY "The average spent on gasoline  during your road trip was: "
+  OUTPUT avgSpent
+  DISPLAY "The minimum spent on gasoline  during your road trip was: "
+  OUTPUT minSpent
+  DISPLAY "The maximum spent on gasoline  during your road trip was: "
+  OUTPUT maxSpent
+
+  DISPLAY "Would you like to run the program again? (y/n)
+  INPUT userResponse
+END WHILE
+DISPLAY "I hope you had a great road trip! Thank you for using my program!"
+
+
+
